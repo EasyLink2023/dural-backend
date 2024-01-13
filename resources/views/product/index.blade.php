@@ -13,6 +13,7 @@
                                     <th>ID</th>
                                     <th>Category Name</th>
                                     <th>Product Name</th>
+                                    <th>Product Image</th>
                                 </tr>
                             </thead>
                             <tbody>
