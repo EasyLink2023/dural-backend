@@ -10,7 +10,7 @@
                         <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data"
                             class="row g-3 needs-validation" novalidate>
                             @csrf
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="ProductCategory" class="form-label">Product Category</label>
                                 <select class="form-control" id="ProductCategory" name="category_id" required>
                                     <option selected disabled value="">Select Category</option>
@@ -25,7 +25,7 @@
                                     Please select a product category.
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="product_name" class="form-label">Product Name</label>
                                 <input type="text" name="product_name" id="product_name" required class="form-control" />
                                 <div class="valid-feedback">
@@ -35,9 +35,9 @@
                                     Please select a product name.
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="product_image" class="form-label">Product Image</label>
-                                <input type="file" name="product_image" id="product_image" class="form-control" />
+                                <input type="file" name="product_image" id="product_image" class="form-control" required />
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -162,7 +162,7 @@
                             <div class="col-md-4">
                                 <label for="dimension_image" class="form-label">Product dimension Image</label>
                                 <input type="file" name="dimension_image" id="dimension_image"
-                                    class="form-control" />
+                                    class="form-control" required />
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -173,7 +173,7 @@
                             <div class="col-md-4">
                                 <label for="application_image" class="form-label">Product application Image</label>
                                 <input type="file" name="application_image" id="application_image"
-                                    class="form-control" />
+                                    class="form-control" required />
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -183,7 +183,7 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="usage_image" class="form-label">Product usage Image</label>
-                                <input type="file" name="usage_image" id="usage_image" class="form-control" />
+                                <input type="file" name="usage_image" id="usage_image" class="form-control" required />
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
