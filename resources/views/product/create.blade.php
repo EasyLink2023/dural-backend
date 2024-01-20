@@ -35,7 +35,7 @@
                                     Please select a product name.
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <label for="product_image" class="form-label">Product Image</label>
                                 <input type="file" name="product_image" id="product_image" class="form-control" />
                                 <div class="valid-feedback">
@@ -56,6 +56,16 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
+                                <label for="color_text" class="form-label">Product color text</label>
+                                <input type="text" class="form-control" name="color_text">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please select text.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <label for="package" class="form-label">Product package</label>
                                 <select multiple="multiple" name="package[]" id="package" required
                                     class="form-control select2 mySelect">
@@ -68,74 +78,13 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="brand" class="form-label">Product brand</label>
-                                <input type="text" name="brand" id="brand" required class="form-control">
-                                </input>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Please provide brand.
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="size_height" class="form-label">Product size (Height)</label>
-                                <select multiple="multiple" name="size_height[]" id="size_height" required
-                                    class="form-control select2 mySelect">
-                                </select>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Please select size (Height).
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="size_length" class="form-label">Product size (Length)</label>
-                                <select multiple="multiple" name="size_length[]" id="size_length" required
-                                    class="form-control select2 mySelect">
-                                </select>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Please select size (Height).
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="color" class="form-label">Product color</label>
-                                <select multiple="multiple" name="color[]" id="color" required
-                                    class="form-control select2 mySelect">
-                                </select>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Please select color.
-                                </div>
-                            </div>
-                            <div class="col-md-4">
                                 <label for="product_application" class="form-label">Product Application</label>
-                                <select multiple="multiple" name="product_application[]" id="product_application" required
-                                    class="form-control select2 mySelect">
-                                </select>
+                                <input type="text" class="form-control" name="product_application" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                                 <div class="invalid-feedback">
                                     Please select Product Application.
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="applications" class="form-label">Product Applications</label>
-                                <select multiple="multiple" name="applications[]" id="applications" required
-                                    class="form-control select2 mySelect">
-                                </select>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Please select Product Applications.
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -162,6 +111,31 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
+                                <label for="color" class="form-label">Product color</label>
+                                <select multiple="multiple" name="color[]" id="color"
+                                    class="form-control select2 mySelect">
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please select color.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="color_type" class="form-label">Product color type</label>
+                                <select name="color_type" id="color_type" class="form-control">
+                                    <option value="text">Text</option>
+                                    <option value="image">Image</option>
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please select color.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <label for="benefits" class="form-label">Product benefits</label>
                                 <select multiple="multiple" name="benefits[]" id="benefits" required
                                     class="form-control select2 mySelect">
@@ -174,8 +148,21 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
+                                <label for="applications" class="form-label">Product Applications</label>
+                                <select multiple="multiple" name="applications[]" id="applications" required
+                                    class="form-control select2 mySelect">
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please select Product Applications.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <label for="dimension_image" class="form-label">Product dimension Image</label>
-                                <input type="file" name="dimension_image" id="dimension_image" class="form-control" />
+                                <input type="file" name="dimension_image" id="dimension_image"
+                                    class="form-control" />
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -185,7 +172,8 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="application_image" class="form-label">Product application Image</label>
-                                <input type="file" name="application_image" id="application_image" class="form-control" />
+                                <input type="file" name="application_image" id="application_image"
+                                    class="form-control" />
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -204,6 +192,34 @@
                                 </div>
                             </div>
                             <div class="col-12">
+                                <div class="row clone_row">
+                                    <div class="col-5">
+                                        <label for="size_height" class="form-label">Product size height</label>
+                                        <input type="text" name="size[]" class="form-control" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please provide a usage image.
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <label for="size_height" class="form-label">Product size length</label>
+                                        <input type="text" name="size[]" class="form-control" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please provide a usage image.
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <a href="#" class="btn btn-warning mt-4 add-more">+</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
                                 <button class="btn btn-primary" type="submit">Submit form</button>
                             </div>
                         </form>
@@ -212,49 +228,78 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    @push('scripts')
+        <script src="{{ asset('jquery-3.6.4.min.js') }}"></script>
+        <script src="{{ asset('select2.min.js') }}"></script>
 
-    <script>
-        (function() {
-            'use strict'
-            var forms = document.querySelectorAll('.needs-validation')
-            Array.prototype.slice.call(forms)
-                .forEach(function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
-                        }
+        <script>
+            (function() {
+                'use strict'
+                var forms = document.querySelectorAll('.needs-validation')
+                Array.prototype.slice.call(forms)
+                    .forEach(function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault()
+                                event.stopPropagation()
+                            }
 
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-        })()
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.mySelect').select2();
+                            form.classList.add('was-validated')
+                        }, false)
+                    })
+            })()
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('.mySelect').select2();
 
-            $('.mySelect').each(function() {
-                var $select = $(this);
-                $select.select2();
-                $select.on('select2:open', function() {
-                    $('.select2-container--open .select2-search__field').on('keyup', function(
-                        event) {
-                        var searchTerm = $(this).val().trim();
-                        if (event.key === 'Enter' && searchTerm) {
-                            var newOption = new Option(searchTerm, searchTerm, true, true);
-                            $select.append(newOption).trigger('change');
-                            $(this).val('');
-                            $('.select2-results__message').css('display', 'none');
-                            $select.select2('close');
-                        }
+                $('.mySelect').each(function() {
+                    var $select = $(this);
+                    $select.select2();
+                    $select.on('select2:open', function() {
+                        $('.select2-container--open .select2-search__field').on('keyup', function(
+                            event) {
+                            var searchTerm = $(this).val().trim();
+                            if (event.key === 'Enter' && searchTerm) {
+                                var newOption = new Option(searchTerm, searchTerm, true, true);
+                                $select.append(newOption).trigger('change');
+                                $(this).val('');
+                                $('.select2-results__message').css('display', 'none');
+                                $select.select2('close');
+                            }
+                        });
                     });
-                });
 
-                $select.select2();
+                    $select.select2();
+                });
             });
-        });
-    </script>
+        </script>
+        <script>
+            $(document).ready(function() {
+                var maxFields = 100;
+                var wrapper = $(".clone_row");
+                var addButton = $(".add-more");
+                var removeButton = '<a href="javascript:void(0)" class="btn btn-danger mt-4 remove-more">-</a>';
+                var x = 1;
+                $(addButton).click(function(e) {
+                    e.preventDefault();
+                    if (x < maxFields) {
+                        x++;
+                        var clonedRow = wrapper.clone();
+                        clonedRow.removeClass('clone_row').addClass('cloned_row_' + x);
+                        clonedRow.find('.add-more').replaceWith(removeButton);
+                        wrapper.after(clonedRow);
+                    }
+                });
+                $('body').on("click", ".remove-more", function(e) {
+                    // console.log("hello")
+                    e.preventDefault();
+                    // console.log(x)
+                    // $(this).closest('.cloned_row_' + x).remove();
+                    $('.cloned_row_' + x).remove();
+                    x--;
+                });
+            });
+        </script>
+    @endpush
 @endsection

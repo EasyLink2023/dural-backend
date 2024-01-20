@@ -16,9 +16,8 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
 
-
+    <link rel="stylesheet" href="{{ asset('select2.min.css') }}">
 </head>
 
 <body>
@@ -104,6 +103,7 @@
             @yield('content')
         </main>
     </div>
+    @stack('scripts')
 </body>
 
 </html>

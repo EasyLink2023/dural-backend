@@ -17,6 +17,7 @@ class ProductController extends Controller
         return view('product.create',$data);
     }
     public function store(Request $request) {
+
         $request->validate([
             'product_name' => 'required'
         ]);
@@ -40,22 +41,35 @@ class ProductController extends Controller
             $productUsageImageFilename = time().rand(). '.' . $image->getClientOriginalExtension();
             $image->move(public_path('uploads/product-images'), $productUsageImageFilename);
         }
-
+        $sizes = $request->input('size', []);
+        $result = [];
+        for ($i = 0; $i < count($sizes); $i += 2) {
+            $heightIndex = $i;
+            $lengthIndex = $i + 1;
+            if (isset($sizes[$heightIndex]) && isset($sizes[$lengthIndex])) {
+                $height = $sizes[$heightIndex];
+                $length = $sizes[$lengthIndex];
+                $result[] = [
+                    'height' => $height,
+                    'length' => $length,
+                ];
+            }
+        }
         $product = new Product;
         $product->category_id = $request->category_id;
         $product->product_name = $request->product_name ?? 'Test';
         $product->product_image = $productImageFilename ?? null;
-        $product->material = $request->material;
-        $product->size_height = $request->size_height;
-        $product->size_length = $request->size_length;
-        $product->brand = $request->brand;
-        $product->color = $request->color;
-        $product->package = $request->package;
-        $product->product_application = $request->product_application;
-        $product->applications = $request->applications;
-        $product->features = $request->features;
-        $product->delivery_time = $request->delivery_time;
-        $product->benefits = $request->benefits;
+        $product->material = $request->material ?? '';
+        $product->package = $request->package ?? '';
+        $product->color = $request->color ?? '';
+        $product->color_text = $request->color_text ?? '';
+        $product->color_type = $request->color_type ?? '';
+        $product->product_application = $request->product_application ?? '';
+        $product->applications = $request->applications ?? '';
+        $product->features = $request->features ?? '';
+        $product->delivery_time = $request->delivery_time ?? '';
+        $product->benefits = $request->benefits ?? '';
+        $product->size = json_encode($result);
         $product->dimension_image = $productDimensionImageFilename ?? null;
         $product->application_image = $productApplicationImageFilename ?? null;
         $product->usage_image = $productUsageImageFilename ?? null;
