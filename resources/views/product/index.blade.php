@@ -32,7 +32,7 @@
                                                 {{ $item->material }}
                                             </td>
                                             <td>
-                                                <a href="/admin/edit-product/{{$item->id}}"
+                                                <a href="{{ route('product.edit', $item->id) }}"
                                                     class="btn btn-primary">Edit</a>
                                                 
                                             </td>
