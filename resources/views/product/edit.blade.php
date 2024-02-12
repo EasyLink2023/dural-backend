@@ -10,7 +10,7 @@
                         <form action="{{ route('product.update') }}" method="post" enctype="multipart/form-data"
                             class="row g-3 needs-validation" novalidate>
                             @csrf
-                            <input type="number" name="hidden" value="{{ $product->id }}" id="">
+                            <input type="hidden" name="id" value="{{ $product->id }}" id="">
                             <div class="col-md-10">
                                 <label for="product_image" class="form-label">Product Image</label>
                                 <input type="file" name="product_image" id="product_image" class="form-control" required />
