@@ -16,6 +16,6 @@
         </style>
     </head>
     <body>
-        <h2 class="text-center" style="text-align: center">Welcome to dural indai</h2>
+        <h1 class="text-center" style="text-align: center; padding:10%">Welcome to Dural India Backend</h1>
     </body>
 </html>
