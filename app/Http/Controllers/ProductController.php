@@ -107,8 +107,8 @@ class ProductController extends Controller
             $fileToDeletedimension_image = public_path('uploads/product-images/' . $product->dimension_image);
             if (File::exists($fileToDeletedimension_image)) {
                 File::delete($fileToDeletedimension_image);
-                $image = $request->file('dimension_image');
             }
+            $image = $request->file('dimension_image');
             $productDimensionImageFilename = time() . rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('uploads/product-images'), $productDimensionImageFilename);
             $product->dimension_image = $productDimensionImageFilename;
