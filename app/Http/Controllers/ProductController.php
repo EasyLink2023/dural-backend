@@ -134,6 +134,36 @@ class ProductController extends Controller
             $product->usage_image = $productUsageImageFilename;
         }
         $product->save();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Product created successfully');
+    }
+
+    public function destroy($id) {
+        $product = Product::find($id);
+        if ($product->product_image) {
+            $fileToDelete = public_path('uploads/product-images/' . $product->product_image);
+            if (File::exists($fileToDelete)) {
+                File::delete($fileToDelete);
+            }
+        }
+        if ($product->dimension_image) {
+            $fileToDeletedimension_image = public_path('uploads/product-images/' . $product->dimension_image);
+            if (File::exists($fileToDeletedimension_image)) {
+                File::delete($fileToDeletedimension_image);
+            }
+        }
+        if ($product->application_image) {
+            $fileToDeleteapplication_image = public_path('uploads/product-images/' . $product->application_image);
+            if (File::exists($fileToDeleteapplication_image)) {
+                File::delete($fileToDeleteapplication_image);
+            }
+        }
+        if ($product->usage_image) {
+            $fileToDeleteusage_image = public_path('uploads/product-images/' . $product->usage_image);
+            if (File::exists($fileToDeleteusage_image)) {
+                File::delete($fileToDeleteusage_image);
+            }
+        }
+        $delete = $product->delete();
+        return redirect()->back()->with('delete-success', 'Product deleted Successfully');
     }
 }

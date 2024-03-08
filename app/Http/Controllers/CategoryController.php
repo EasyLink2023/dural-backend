@@ -19,4 +19,10 @@ class CategoryController extends Controller
         $data = Category::create($request->all());
         return redirect()->back()->with('success', 'Category Created Successfully');
     }
+
+    public function destroy($id) {
+        $delete_product = Category::find($id);
+        $delete = $delete_product->delete();
+        return redirect()->back()->with('delete-success', 'Category deleted Successfully');
+    }
 }

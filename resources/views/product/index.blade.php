@@ -7,6 +7,11 @@
                 <div class="card">
                     <div class="card-header">{{ __('All Product') }}</div>
                     <div class="card-body">
+                        @if (session('delete-success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('delete-success') }}
+                            </div>
+                        @endif
                         <table class="table table-striped table-bordered">
                             <thead>
                                 <tr>
@@ -34,6 +39,8 @@
                                             <td>
                                                 <a href="{{ route('product.edit', $item->id) }}"
                                                     class="btn btn-primary">Edit</a>
+                                                <a href="{{ route('product.delete', $item->id) }}"
+                                                    class="btn btn-danger">Delete</a>
                                                 
                                             </td>
                                         </tr>

@@ -7,6 +7,11 @@
                 <div class="card">
                     <div class="card-header">{{ __('Add Product') }}</div>
                     <div class="card-body bordered">
+                        @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('success') }}
+                            </div>
+                        @endif
                         <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data"
                             class="row g-3 needs-validation" novalidate>
                             @csrf
