@@ -5,20 +5,21 @@
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">{{ __('Add Category') }}</div>
+                    <div class="card-header">{{ isset($category) ? 'Update' : 'Add' }} Category</div>
                     <div class="card-body">
                         @if (session('success'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('success') }}
                             </div>
                         @endif
-                        <form action="{{ route('category.store') }}" method="post">
+                        <form action="{{ isset($category) ? route('category.update') : route('category.store') }}" method="post">
                             @csrf
                             <label for="" class="mb-4"><b>Enter Category Name</b></label>
-                            <input type="text" name="cat_name" placeholder="Enter Category Name" required class="form-control mb-4">
+                            <input type="text" name="cat_name" placeholder="Enter Category Name" required class="form-control mb-4" value="{{ isset($category->cat_name) ? $category->cat_name : '' }}">
                             <label for="" class="mb-4"><b>Enter Page Url</b></label>
-                            <input type="text" name="page_url" placeholder="Enter Page Name" required class="form-control mb-4">
-                            <input type="submit" class="form-control btn btn-primary" value="Save Category">
+                            <input type="text" name="page_url" placeholder="Enter Page Name" required class="form-control mb-4" value="{{ isset($category->page_url) ? $category->page_url : '' }}">
+                            <input type="hidden" name="cat_id" value="{{ isset($category->id) ? $category->id : '' }}">
+                            <input type="submit" class="form-control btn btn-{{ isset($category) ? 'warning' : 'primary' }}" value="{{ isset($category) ? 'Update Category' : 'Submit Category' }}">
                         </form>
                     </div>
                 </div>
@@ -51,13 +52,14 @@
                                             <td>{{ $item->page_url }}</td>
                                             <td>{{ $item->status }}</td>
                                             <td>
+                                                <a href="{{ route('category.index', $item->id) }}" class="btn btn-primary">Edit</a>
                                                 <a href="{{ route('category.delete', $item->id) }}" class="btn btn-danger">Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td colspan="3" class="text-center">No Data Found.</
+                                        <td colspan="3" class="text-center">No Data Found.</td>
                                     </tr>
                                 @endif
                             </tbody>

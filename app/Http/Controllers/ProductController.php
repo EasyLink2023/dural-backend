@@ -93,6 +93,12 @@ class ProductController extends Controller
             'id' => 'required'
         ]);
         $product = Product::find($request->id);
+        if($request->has('category_id')) {
+            $product->category_id = $request->category_id;
+        }
+        if($request->has('product_name')) {
+            $product->product_name = $request->product_name;
+        }
         if ($request->has('product_image')) {
             $fileToDelete = public_path('uploads/product-images/' . $product->product_image);
             if (File::exists($fileToDelete)) {
